@@ -1,0 +1,73 @@
+//package model;
+import java.util.ArrayList;
+class testMySet {
+    public static void main(String[] args) {
+        ArrayList<Integer> people = new ArrayList<>();
+        System.out.println(people);
+        MySet<Integer> integers =  new MySet<>();
+        System.out.println(integers);
+        integers.add(new Integer(1));
+        System.out.println("add 1 " + integers);
+        integers.add(new Integer(2));
+        System.out.println("add 2 " + integers);
+        integers.add(new Integer(3));
+        integers.add(new Integer(6));
+        integers.add(new Integer(7));
+        Integer[] intArray = integers.toArray();
+        //System.out.println("toArray " + integers.toArray());
+        System.out.println("add list " + integers);
+        System.out.println("size " + integers.size());
+        integers.add(new Integer(1));
+        System.out.println("add 1 " + integers);
+        try{
+            integers.remove(new Integer(1));
+            System.out.println("remove 1 " + integers);
+        } catch (Exception e){
+            System.out.println("error remove1 " + e.getMessage());
+        }
+        try{
+            integers.remove(new Integer(4));
+            System.out.println("remove 1 " + integers);
+        } catch (Exception e){
+            System.out.println("error remove1 " + e.getMessage());
+        }
+        //integers.contains(new Integer(2));
+        System.out.println("contains 2 " + integers.contains(new Integer(2)));
+        System.out.println("contains 4 " + integers.contains(new Integer(4)));
+        Integer[] listInt = new Integer[2];
+        listInt[0] = new Integer(6);
+        listInt[1] = new Integer(7);
+        System.out.println("before " + integers);
+        try{
+            integers.removeAll(listInt);
+            System.out.println("after " + integers);
+        }catch (Exception e){
+            System.out.println("error removeAll " + e.getMessage());
+        }
+        listInt[1] = new Integer(3);
+        try{
+            integers.removeAll(listInt);
+            System.out.println("after " + integers);
+        }catch (Exception e){
+            System.out.println("error removeAll " + e.getMessage());
+        }
+        System.out.println("size " + integers.size());
+        System.out.println("empty " + integers.isEmpty());
+        try{
+            Integer i = integers.getRandomElement();
+            System.out.println("reand element " + i);
+        }catch (Exception e){
+            System.out.println("error randElement " + e.getMessage());
+        }
+        integers.clear();
+        System.out.println("clear " + integers);
+        System.out.println("size " + integers.size());
+        System.out.println("empty " + integers.isEmpty());
+        try{
+            Integer i = integers.getRandomElement();
+            System.out.println("reand element " + i);
+        }catch (Exception e){
+            System.out.println("error randElement " + e.getMessage());
+        }
+    }
+}

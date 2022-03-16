@@ -1,0 +1,25 @@
+public class Treasury {
+    private int coins;
+
+    public Treasury() {
+        this.coins = 200;
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public boolean spend(int cost) {
+        if (coins >= cost) {
+            coins -= cost;
+            return true;
+        }
+        return false;
+    }
+
+    public void earn(int ... earned) {
+        for (int earn: earned) {
+            coins += earn;
+        }
+    }
+
